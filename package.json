@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "test": "meteor test --driver-package practicalmeteor:mocha",
-    "start": "meteor run",
-    "lint": "eslint --ext '.jsx,.js' .",
+    "start": "npm run lint && meteor run",
+    "lint": "eslint --ext '.jsx,.js,.es6' client/ server/ imports/ public/ tests/",
     "storybook": "start-storybook -p 9001",
     "deploy-storybook": "storybook-to-ghpages"
   },
