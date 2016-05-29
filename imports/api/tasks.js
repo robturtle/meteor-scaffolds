@@ -11,14 +11,23 @@ Tasks.attachSchema(new SimpleSchema({
   owner: { type: String },
   username: { type: String },
   checked: { type: Boolean, optional: true },
-  isPrivate: { type: Boolean, optional: true },
+  private: { type: Boolean, optional: true },
 }));
+
+Tasks.helpers({
+  isPrivate() {
+    return !!this.private;
+  },
+  isChecked() {
+    return !!this.isChecked;
+  },
+});
 
 if (Meteor.isServer) {
   Meteor.publish('tasks', function tasksPublication() {
     return Tasks.find({
       $or: [
-        { isPrivate: { $ne: true } },
+        { private: { $ne: true } },
         { owner: this.userId },
       ],
     });
@@ -63,7 +72,7 @@ Meteor.methods({
     if (task.owner !== this.userId) {
       throw new Meteor.Error('not-authorized');
     }
-    Tasks.update(taskId, { $set: { isPrivate } });
+    Tasks.update(taskId, { $set: { private: isPrivate } });
   },
 
 });

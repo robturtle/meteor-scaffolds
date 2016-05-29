@@ -9,7 +9,7 @@ export default class Task extends Component {
   }
 
   togglePrivate() {
-    Meteor.call('tasks.setPrivate', this.props.task._id, !this.props.task.isPrivate);
+    Meteor.call('tasks.setPrivate', this.props.task._id, !this.props.task.private);
   }
 
   deleteThisTask() {
@@ -23,7 +23,7 @@ export default class Task extends Component {
     const username = this.props.task.username;
     const taskClassName = classnames({
       checked: this.props.task.checked,
-      private: this.props.task.isPrivate,
+      private: this.props.task.private,
     });
     return (
       <li className={taskClassName}>
@@ -40,7 +40,7 @@ export default class Task extends Component {
 
         { this.props.showPrivateButton ? (
           <button className="button toggle-private" onClick={togglePrivate}>
-            { this.props.task.isPrivate ? 'Private' : 'Public' }
+            { this.props.task.private ? 'Private' : 'Public' }
           </button>
         ) : ''}
 

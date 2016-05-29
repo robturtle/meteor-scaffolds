@@ -21,6 +21,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 mongo                   # The database Meteor supports right now
 aldeed:simple-schema    # Schema
 aldeed:collection2      # Auto validate schema
+dburles:collection-helpers # inject helper functions to collections
 
 # React
 react-meteor-data       # Meteor pass Collection data to React
