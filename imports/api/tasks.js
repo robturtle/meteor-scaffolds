@@ -1,8 +1,18 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 export const Tasks = new Mongo.Collection('tasks');
+
+Tasks.attachSchema(new SimpleSchema({
+  text: { type: String, min: 1 },
+  createdAt: { type: Date },
+  owner: { type: String },
+  username: { type: String },
+  checked: { type: Boolean, optional: true },
+  isPrivate: { type: Boolean, optional: true },
+}));
 
 if (Meteor.isServer) {
   Meteor.publish('tasks', function tasksPublication() {
@@ -22,12 +32,13 @@ Meteor.methods({
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
-    Tasks.insert({
+    const task = {
       text,
       createdAt: new Date(),
       owner: this.userId,
       username: Meteor.users.findOne(this.userId).username,
-    });
+    };
+    Tasks.insert(task);
   },
 
   'tasks.remove'(taskId) {

@@ -29,6 +29,7 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const text = this.refs.textInput.value.trim();
+    if (!text.length) { return; }
     Meteor.call('tasks.insert', text);
     this.refs.textInput.value = '';
   }
