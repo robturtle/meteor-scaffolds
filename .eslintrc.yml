@@ -1,0 +1,32 @@
+---
+  root: true
+
+  env:
+    es6: true
+    browser: true
+    node: true
+    meteor: true
+
+  parserOptions:
+    ecmaVersion: 6
+    sourceType: module
+
+  plugins:
+    - meteor
+    - react
+
+  extends:
+    - airbnb/base
+    - plugin:meteor/recommended
+    - plugin:react/recommended
+
+  settings:
+    import/resolver:
+      meteor:
+        extensions:
+          - .js
+          - .jsx
+          - .es6
+
+  rules:
+    no-underscore-dangle: 0

@@ -1,0 +1,30 @@
+{
+  "name": "tasks-manager",
+  "private": true,
+  "scripts": {
+    "test": "meteor test --driver-package practicalmeteor:mocha",
+    "start": "meteor run",
+    "lint": "eslint --ext '.jsx,.js' .",
+    "storybook": "start-storybook -p 9001",
+    "deploy-storybook": "storybook-to-ghpages"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "isomorphic-style-loader": "^1.0.0",
+    "meteor-node-stubs": "~0.2.0",
+    "normalize.css": "^4.1.1",
+    "react": "^15.1.0",
+    "react-addons-pure-render-mixin": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "github:kadirahq/react-storybook",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-import-resolver-meteor": "^0.2.3",
+    "eslint-plugin-import": "^1.8.0",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
+    "eslint-plugin-meteor": "^3.5.2",
+    "eslint-plugin-react": "^5.1.1"
+  }
+}
