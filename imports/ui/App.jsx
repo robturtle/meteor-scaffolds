@@ -66,6 +66,7 @@ class App extends Component {
               readOnly
               checked={this.state.hideCompleted}
               onClick={toggleHideCompleted}
+              value=""
             />
             Hide Completed Tasks
           </label>
