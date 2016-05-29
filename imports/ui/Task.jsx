@@ -36,6 +36,7 @@ export default class Task extends Component {
           readOnly
           checked={this.props.task.checked}
           onClick={toggleChecked}
+          value=""
         />
 
         { this.props.showPrivateButton ? (
