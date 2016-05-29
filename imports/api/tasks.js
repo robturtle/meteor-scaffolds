@@ -24,13 +24,14 @@ Tasks.helpers({
 });
 
 if (Meteor.isServer) {
-  Meteor.publish('tasks', function tasksPublication() {
-    return Tasks.find({
-      $or: [
-        { private: { $ne: true } },
-        { owner: this.userId },
-      ],
-    });
+  Meteor.publish('tasks.public', () =>
+    Tasks.find({
+      private: { $ne: true },
+    })
+  );
+
+  Meteor.publish('tasks.owned', function ownedTasks() {
+    return Tasks.find({ owner: this.userId });
   });
 }
 

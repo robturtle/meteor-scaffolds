@@ -98,7 +98,8 @@ App.propTypes = {
 };
 
 export default createContainer(() => {
-  Meteor.subscribe('tasks');
+  Meteor.subscribe('tasks.public');
+  Meteor.subscribe('tasks.owned');
   return {
     tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
     currentUser: Meteor.user(),
