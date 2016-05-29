@@ -4,6 +4,7 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
+# Basis
 meteor-base             # Packages every Meteor app needs to have
 mobile-experience       # Packages for a great mobile UX
 mongo                   # The database Meteor supports right now
@@ -17,9 +18,14 @@ standard-minifier-js    # JS minifier run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
+# React
 react-meteor-data       # Meteor pass Collection data to React
+
+# Default Accounts
 accounts-ui             # Meteor Blaze account component
 accounts-password       # Meteor account password signup
 
+# Testing
 practicalmeteor:mocha   # Unit Testing
+practicalmeteor:chai    # Assertion (Explicit add it to avoid ESLint warning)
 xolvio:cleaner          # Clean database for unit testing
