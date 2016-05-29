@@ -48,7 +48,7 @@ class App extends Component {
           showPrivateButton={showPrivateButton}
         />
       );
-    }) : (<p className='todoPlaceholder'>Sign in to create new todo items...</p>);
+    }) : (<p className='todoPlaceholder'>Currently no uncompleted todo items...</p>);
   }
 
   render() {
