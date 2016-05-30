@@ -26,9 +26,14 @@ dburles:collection-helpers # inject helper functions to collections
 # React
 react-meteor-data       # Meteor pass Collection data to React
 
-# Default Accounts
-accounts-ui             # Meteor Blaze account component
-accounts-password       # Meteor account password signup
+# Account system
+accounts-ui             # prototype Blaze account component
+accounts-password       # prototype account password signup
+accounts-github
+accounts-facebook
+accounts-google
+accounts-twitter
+acemtp:accounts-slack
 
 # Testing
 practicalmeteor:mocha   # Unit Testing
