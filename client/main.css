@@ -27,7 +27,7 @@ header {
   position: relative;
   border: #e8e8e8 solid 1px;
   border-radius: 10px;
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 
 h1 {
@@ -94,7 +94,7 @@ li.checked .text {
   text-decoration: line-through;
 }
 
-li.private {
+.private {
   background: #eee;
   border-color: #ddd;
 }
