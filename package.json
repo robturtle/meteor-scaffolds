@@ -2,7 +2,7 @@
   "name": "tasks-manager",
   "private": true,
   "scripts": {
-    "test": "meteor test --driver-package practicalmeteor:mocha",
+    "test": "meteor test --driver-package practicalmeteor:mocha -p 4000",
     "start": "npm run lint && meteor run",
     "lint": "eslint --ext '.jsx,.js,.es6' client/ server/ imports/ public/ tests/",
     "storybook": "start-storybook -p 9001",

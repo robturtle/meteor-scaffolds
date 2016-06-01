@@ -1,13 +1,9 @@
-/* eslint-env mocha */
-/* eslint-disable prefer-arrow-callback */
-/* eslint-disable func-names */
-
 import { Meteor } from 'meteor/meteor';
 import { Random } from 'meteor/random';
 import { resetDatabase } from 'meteor/xolvio:cleaner';
 import { assert } from 'meteor/practicalmeteor:chai';
 
-import { Tasks } from './tasks.js';
+import { Tasks } from '../imports/api/tasks.js';
 
 if (Meteor.isServer) {
   describe('Tasks', function () {
@@ -23,6 +19,7 @@ if (Meteor.isServer) {
           owner: userId,
           username: 'tmeasday',
         });
+        assert.equal(Tasks.find().count(), 1);
       });
 
       it('can delete owned task', function () {
