@@ -6,12 +6,31 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 export const Tasks = new Mongo.Collection('tasks');
 
 Tasks.attachSchema(new SimpleSchema({
-  text: { type: String, min: 1 },
-  createdAt: { type: Date },
-  owner: { type: String },
-  username: { type: String },
-  checked: { type: Boolean, optional: true },
-  private: { type: Boolean, optional: true },
+  text: {
+    type: String,
+    min: 1,
+    max: 100,
+  },
+  createdAt: {
+    type: Date,
+    denyUpdate: true,
+  },
+  owner: {
+    type: String,
+    denyUpdate: true,
+  },
+  username: {
+    type: String,
+    denyUpdate: true,
+  },
+  checked: {
+    type: Boolean,
+    defaultValue: false,
+  },
+  private: {
+    type: Boolean,
+    defaultValue: false,
+  },
 }));
 
 Tasks.helpers({

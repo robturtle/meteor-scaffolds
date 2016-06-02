@@ -39,3 +39,5 @@ acemtp:accounts-slack
 practicalmeteor:mocha   # Unit Testing
 practicalmeteor:chai    # Assertion (Explicit add it to avoid ESLint warning)
 xolvio:cleaner          # Clean database for unit testing
+dburles:factory
+hwillson:stub-collections
